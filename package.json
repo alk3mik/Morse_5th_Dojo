@@ -1,0 +1,26 @@
+{
+  "name": "Morse_5th_Dojo",
+  "version": "1.0.0",
+  "description": "WCS Dojo named Morse",
+  "main": "morse.corrected.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alk3mik/Morse_5th_Dojo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alk3mik/Morse_5th_Dojo/issues"
+  },
+  "homepage": "https://github.com/alk3mik/Morse_5th_Dojo#readme",
+  "dependencies": {
+    "node": "0.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
