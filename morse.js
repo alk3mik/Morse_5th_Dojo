@@ -49,13 +49,8 @@ const alphabet = {
     ".": "E"
 };
 
-// let str = ".-.. .- .-.. .--. .... .- -... . -  -- --- .-. ... .  --- ..-  -.-. --- -.. .  -- --- .-. ... . --..--  . ... -  ..- -.  -.-. --- -.. .  .--. . .-. -- . - - .- -. -  -.. .  - .-. .- -. ... -- . - - .-. .  ..- -.  - . -..- - .   .-.. .- .. -.. .  -.. .  ... .-. .. . ...  -.. .. -- .--. ..- .-.. ... .. --- -. ...  -.-. --- ..- .-. - . ...  . -  .-.. --- -. --. ..- . ... --..--  --.- ..- . .-.. .-.. . ...  ... --- .. . -. -  .--. .-. --- -.. ..- .. - . ...  .--. .- .-.  -.. . ...  ... .. --. -. . ... --..--  ..- -. .  .-.. ..- -- .. .-. . --..--  ..- -.  ... --- -.  --- ..-  ..- -.  --. . ... - . .-.-.-";
-
 module.exports = function (str) {
 	// your code here
-
-	str = ".-.. .- .-.. .--. .... .- -... . -  -- --- .-. ... .  --- ..-  -.-. --- -.. .  -- --- .-. ... . --..--  . ... -  ..- -.  -.-. --- -.. .  .--. . .-. -- . - - .- -. -  -.. .  - .-. .- -. ... -- . - - .-. .  ..- -.  - . -..- - .   .-.. .- .. -.. .  -.. .  ... .-. .. . ...  -.. .. -- .--. ..- .-.. ... .. --- -. ...  -.-. --- ..- .-. - . ...  . -  .-.. --- -. --. ..- . ... --..--  --.- ..- . .-.. .-.. . ...  ... --- .. . -. -  .--. .-. --- -.. ..- .. - . ...  .--. .- .-.  -.. . ...  ... .. --. -. . ... --..--  ..- -. .  .-.. ..- -- .. .-. . --..--  ..- -.  ... --- -.  --- ..-  ..- -.  --. . ... - . .-.-.-";
-    // let len = str.length;
 
 	// Let's caclulate the number of words, which is equal to thr number of blank
 	// spaces + 1. Reminder: 1 blank space = "  "
@@ -72,19 +67,22 @@ module.exports = function (str) {
     while (i < nWords) {
     	wEnd = subStr.indexOf("  ");
     	word = subStr.substring(0, wEnd);
+        wEnd = wEnd + 2;
     	subStr = subStr.substring(wEnd);
+        // console.log(wEnd, word, subStr.length, str.length);
     	
     	let j = 0;
     	while (j < wEnd) {
     		lEnd = word.indexOf(" ");
     		letter = word.substring(0, lEnd);
-    		console.log(letter);
-    		word = word.substring("  ");
+            lEnd = lEnd + 1;
+    		word = word.substring(lEnd + 1);
+            // console.log(lEnd, letter, word);
     		j++;
     	}
 
     	i++;
-    	console.log("word");
+    	// console.log(wEnd, word);
     }
 
     // console.log(nwords, typeof(nwords), wIni, wEnd);
