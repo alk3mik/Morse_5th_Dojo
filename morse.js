@@ -49,7 +49,7 @@ const alphabet = {
     ".": "E"
 };
 
-module.exports = function (str) {
+function morse2human(str) {
 	// your code here
 
 	// Let's caclulate the number of words, which is equal to thr number of blank
@@ -63,28 +63,44 @@ module.exports = function (str) {
     let subWord = "";
     let letter = "";
 
+    let sentence = "";
+
     let i = 0;
     while (i < nWords) {
     	wEnd = subStr.indexOf("  ");
-    	word = subStr.substring(0, wEnd);
-        wEnd = wEnd + 2;
-    	subStr = subStr.substring(wEnd);
-        // console.log(wEnd, word, subStr.length, str.length);
+
+    	if (wEnd === -1) {
+    		word = subStr;
+    	} else {
+	    	word = subStr.substring(0, wEnd);
+        	wEnd = wEnd + 2;
+    		subStr = subStr.substring(wEnd);
+    	}
     	
     	let j = 0;
     	while (j < wEnd) {
     		lEnd = word.indexOf(" ");
-    		letter = word.substring(0, lEnd);
-            lEnd = lEnd + 1;
-    		word = word.substring(lEnd + 1);
-            // console.log(lEnd, letter, word);
+
+    		if (lEnd === -1) {
+    			letter = word;
+    		} else {
+	    		letter = word.substring(0, lEnd);
+    			sentence += alphabet[letter];
+        	    lEnd = lEnd + 1;
+    			word = word.substring(lEnd);
+    		}
+
     		j++;
     	}
 
+    	sentence += " ";
+
     	i++;
-    	// console.log(wEnd, word);
+
     }
 
-    // console.log(nwords, typeof(nwords), wIni, wEnd);
+    return console.log(sentence);
 
 };
+
+module.exports = morse2human;
