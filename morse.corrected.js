@@ -64,6 +64,6 @@ module.exports = function (str) {
         // }
     }
 
-    return result;
+    return console.log(result);
 
 };
