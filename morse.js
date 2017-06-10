@@ -71,10 +71,11 @@ function morse2human(str) {
 
     	if (wEnd === -1) {
     		word = subStr;
+            wEnd = word.length;
     	} else {
 	    	word = subStr.substring(0, wEnd);
-        	wEnd = wEnd + 2;
-    		subStr = subStr.substring(wEnd);
+      //   	wEnd = wEnd + 2;
+    		// subStr = subStr.substring(wEnd);
     	}
     	
     	let j = 0;
@@ -83,6 +84,8 @@ function morse2human(str) {
 
     		if (lEnd === -1) {
     			letter = word;
+                sentence += alphabet[letter];
+                j = wEnd - 1;
     		} else {
 	    		letter = word.substring(0, lEnd);
     			sentence += alphabet[letter];
@@ -94,6 +97,9 @@ function morse2human(str) {
     	}
 
     	sentence += " ";
+
+        wEnd = wEnd + 2;
+        subStr = subStr.substring(wEnd);
 
     	i++;
 
